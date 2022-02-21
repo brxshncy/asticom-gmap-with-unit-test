@@ -16,7 +16,6 @@ export const GoogleMap = () => {
         defaultCenter={{ lat, lng }}
         center={{ lat, lng }}
         defaultZoom={10}
-        onGoogleApiLoaded={({ map, maps }) => console.log(map, maps)}
       >
         <GoogleMapMarker lat={lat} lng={lng} name={name} />
       </GoogleMapReact>
