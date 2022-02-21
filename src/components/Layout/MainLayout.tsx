@@ -1,8 +1,6 @@
 import React from "react";
-import { Layout, Menu } from "antd";
-
+import { Layout } from "antd";
 import { SidePanel } from "components/SidePanel/SidePanel";
-import { useGmapHook } from "components/hooks/useGmapHook";
 
 interface MainLayoutProps {
   children: JSX.Element | JSX.Element[];
@@ -11,9 +9,6 @@ interface MainLayoutProps {
 const { Sider, Content } = Layout;
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const { selectedGmapData, setSelectedGmapData, sampleGmapdata } =
-    useGmapHook();
-
   return (
     <Layout>
       {" "}
