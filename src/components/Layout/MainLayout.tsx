@@ -1,34 +1,24 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import {
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-} from "@ant-design/icons";
+
+import { SidePanel } from "components/SidePanel/SidePanel";
+import { useGmapHook } from "components/hooks/useGmapHook";
 
 interface MainLayoutProps {
-  children: React.ReactChild;
+  children: JSX.Element | JSX.Element[];
 }
 
 const { Sider, Content } = Layout;
+
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+  const { selectedGmapData, setSelectedGmapData, sampleGmapdata } =
+    useGmapHook();
+
   return (
     <Layout>
       {" "}
-      <Sider>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-          <Menu.Item key="1" icon={<UserOutlined />}>
-            nav 2
-          </Menu.Item>
-          <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-            nav 2
-          </Menu.Item>
-          <Menu.Item key="3" icon={<UploadOutlined />}>
-            nav 3
-          </Menu.Item>
-        </Menu>{" "}
+      <Sider width={256}>
+        <SidePanel />
       </Sider>{" "}
       <Layout>
         <Content
