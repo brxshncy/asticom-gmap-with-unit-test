@@ -1,12 +1,8 @@
-import { SampleDataModel } from "components/model/SampleData";
 import React, { useState } from "react";
 import { Menu } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { useGmapContext } from "components/context/GoogleMapMarkerContextProvider";
 
-interface IProps {
-  sampleGmapdata: SampleDataModel[];
-}
 export const SidePanel: React.FC = () => {
   let { selectedGmapState, dispatch } = useGmapContext();
 
